@@ -3,7 +3,7 @@
 
 class Matrix {
 private:
-  std::vector<std::vector<double>> vec;
+  std::vector<double> vec;
   int rows;
   int cols;
 public:
