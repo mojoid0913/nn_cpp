@@ -2,3 +2,4 @@ main
 a.out
 *.out
 build/
+*.swp
