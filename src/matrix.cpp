@@ -57,9 +57,9 @@ Matrix Matrix::multiply(Matrix Mat) {
 	if (Mat.rows != this->cols) throw invalid_argument("Matrix size mismatch");
 	Matrix result(this->rows, Mat.cols, ZERO);
 
-	for (int i = 0; i < this->size; i++)
+	for (int i = 0; i < this->rows*Mat.cols; i++) //size -> rows * Matrix.cols
     for (int k = 0; k < this->cols; k++)
-        result.vec[i] += vec[i/cols * cols + k] * Mat.vec[k * Mat.cols + i%Mat.cols];
+        result.vec[i] += vec[i/Mat.cols * cols + k] * Mat.vec[k * Mat.cols + i%Mat.cols];
 
 	return result;
 }

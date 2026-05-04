@@ -23,7 +23,7 @@ public:
 	int getSize() { return size; }
 
 	//Matrix(int rows, int cols, bool zero = false);
-	Matrix(int rows, int cols, InitType type = RANDOM);
+	Matrix(int rows = 0, int cols = 0, InitType type = RANDOM);
 	Matrix add(Matrix Mat);
   Matrix multiply(Matrix Mat);
   Matrix transpose();
