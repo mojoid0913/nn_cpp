@@ -12,7 +12,7 @@ uniform_real_distribution<double> dist(-0.1, 0.1);
 Matrix::Matrix(int rows, int cols, bool zero) {
 	this->rows = rows;
 	this->cols = cols;
-	this->size =rows * cols;
+	this->size = rows * cols;
 	vec.resize(size, 0.0);
 	if (!zero) {
 		for(int i=0;i<size;i++)
@@ -45,7 +45,7 @@ Matrix Matrix::transpose() {
 	Matrix temp(cols,rows,true);
 	for (int i=0; i < this->rows; i++) {
 		for (int j=0; j < this->cols; j++) {
-			temp.vec[j*cols+i] = vec[i*cols+j];
+			temp.vec[j*rows+i] = vec[i*cols+j];
 		}
 	}
 	return temp;

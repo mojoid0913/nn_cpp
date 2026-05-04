@@ -1,4 +1,5 @@
 #include "src/matrix.h"
+#include "src/activations.h"
 #include <iostream>
 
 int main() {
@@ -7,7 +8,10 @@ int main() {
 	W.print();
 	std::cout << "\n";
 
-	W = W.transpose();
+	Matrix S = sigmoid(W);
+	S.print();
 	std::cout << "\n";
-	W.print();
+
+	Matrix S_back = sigmoid_backward(S);
+	S_back.print();
 }
